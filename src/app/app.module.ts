@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -11,6 +12,7 @@ import { ProductoComponent } from './producto/producto.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { NavComponent } from './nav/nav.component';
     ProductoComponent,
     TiendaComponent,
     NotfoundComponent,
-    NavComponent
+    NavComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
