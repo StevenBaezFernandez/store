@@ -21,6 +21,7 @@
     width: 60%
     margin: auto
     text-align: center
+    
 .main-title-categoria
     font-size: 3em
     font-family: 'Raleway'
@@ -47,11 +48,36 @@
         transform: scale(.9)
 .wraper-products
     width: 100%
+    background: #fefefe
 .products
     width: 90%
     margin: auto
     display: grid
+    grid-gap: 35px
     grid-template-columns: 1fr 1fr 1fr
+    // overflow: hidden
 .products__card
-    border: 1px solid
+    border: 1px solid #eee
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, .8)
+    border-radius: 8px
+    background: #fff
+.products__card-img
+    width: 75%
+    display: block
+    margin: auto
+.products__card-body
+    padding: 20px
+.products__card-name
+    font-family: 'Raleway'
+    color: #777
+    font-weight: 300
+    
+    margin-bottom: 15px
+.products__card-price
+    font-family: 'Raleway'
+    color: #d62173
+.products__card-btn-add-card
+    display: none
+.products__card-btn-view
+    display: none
 
