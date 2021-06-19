@@ -30,18 +30,21 @@
 .wraper-products
     width: 100%
     background: #fefefe
+    margin: 20px 0px
 .products
     width: 90%
     margin: auto
     display: grid
     grid-gap: 35px
     grid-template-columns: 1fr 1fr 1fr
-    // overflow: hidden
 .products__card
-    // border: 1px solid #eee
-    // box-shadow: 0px 0px 1px rgba(0, 0, 0, .8)
     border-radius: 8px
     background: #fff
+    position: relative
+    &:hover .products__card-btn-add-card
+        visibility: visible
+        opacity: 1
+        
 .products__card-img
     width: 75%
     display: block
@@ -63,7 +66,24 @@
     color: #d62173
     text-align: center
 .products__card-btn-add-card
-    display: none
+    border: none
+    visibility: hidden
+    opacity: 0
+    background: #000
+    color: #fff
+    padding: 15px
+    font-size: 1em
+    font-family: 'Raleway'
+    position: absolute
+    border-radius: 5px
+    top: 90%
+    left: 50%
+    transform: translateX(-50%)
+    cursor: pointer
+    transition: all .3s ease
+    & i
+        margin-right: 5px
+
 .products__card-btn-view
     display: none
 
