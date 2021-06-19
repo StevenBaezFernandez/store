@@ -13,6 +13,7 @@ import { TiendaComponent } from './tienda/tienda.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderTiendaComponent } from './header-tienda/header-tienda.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FooterComponent } from './footer/footer.component';
     TiendaComponent,
     NotfoundComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderTiendaComponent
   ],
   imports: [
     BrowserModule,
