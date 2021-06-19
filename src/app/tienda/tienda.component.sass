@@ -41,7 +41,8 @@
     border-radius: 8px
     background: #fff
     position: relative
-    &:hover .products__card-btn-add-card
+    &:hover .products__card-btn-add-card,
+    &:hover .products__card-btn-view
         visibility: visible
         opacity: 1
         
@@ -85,5 +86,19 @@
         margin-right: 5px
 
 .products__card-btn-view
-    display: none
-
+    border: none
+    width: 40px
+    height: 40px
+    background: #000
+    color: #fff
+    position: absolute
+    top: 0
+    right: 40px
+    font-size: 1.4em
+    border-radius: 5px
+    display: flex
+    justify-content: center
+    align-items: center
+    visibility: hidden
+    opacity: 0 
+    cursor: pointer
