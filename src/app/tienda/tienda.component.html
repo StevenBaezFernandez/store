@@ -3,7 +3,8 @@
 <div class="wraper-cat-title">
   <div class="main-title-categoria">Categorias</div>
   <div class="wraper-cat">
-    <button class="cat__button" *ngFor="let cat of cat_prod" id="{{cat.id_cat}}" (click)="filtrar_cat($event)" >{{ cat.nombre_cat }}</button>
+    <button class="cat__button" (click)="get_all_data()" >Todos</button>
+    <button class="cat__button" *ngFor="let cat of cat_prod" id="{{cat.nombre_cat}}" (click)="filtrar_cat($event)" >{{ cat.nombre_cat }}</button>
   </div>
 </div>
 

@@ -11,15 +11,22 @@ export class TiendaComponent implements OnInit {
   data_prod:any;
   cat_prod:any;
   constructor(private api: ApiService, private rutaActiva: ActivatedRoute) { }
-
-  ngOnInit(): void {
+  get_all_data(){
     this.api.get('http://localhost/tropicalisimo_api/api.php?controller=tienda').subscribe(data =>{
       this.data_prod = data;
     });
+  }
+  get_cat_data(){
     this.api.get('http://localhost/tropicalisimo_api/api.php?controller=categoria').subscribe(data =>{
       this.cat_prod = data;
       console.log(data);
     });
+  }
+
+  ngOnInit(): void {
+    this.get_all_data();
+    this.get_cat_data();    
+    
     this.rutaActiva.params.subscribe((params: Params) => {
       console.log(params);
     });
@@ -27,6 +34,11 @@ export class TiendaComponent implements OnInit {
 
   filtrar_cat(e:any){
     console.log(e.target.id);
+    let categoria = e.target.id;
+    this.api.get(`http://localhost/tropicalisimo_api/api.php?controller=tienda&categoria=${categoria}`).subscribe( data => {
+      this.data_prod = data;
+      
+    });
   }
 
 }
