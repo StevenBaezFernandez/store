@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +16,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderTiendaComponent } from './header-tienda/header-tienda.component';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
@@ -31,9 +34,10 @@ import { HeaderTiendaComponent } from './header-tienda/header-tienda.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

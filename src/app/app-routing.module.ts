@@ -14,6 +14,8 @@ const routes: Routes = [
   {path: 'contacto', component: ContactoComponent},
   {path: 'nosotros', component: NosotrosComponent},
   {path: 'tienda', component: TiendaComponent},
+  {path: 'tienda/producto/:prod', component: ProductoComponent},
+  {path: 'tienda/categoria/:cat', component: TiendaComponent},
   {path: 'producto', component: ProductoComponent},
   {path: '', redirectTo: './  ', pathMatch: 'full', },
   {path: '**', component: NotfoundComponent }

@@ -3,21 +3,18 @@
 <div class="wraper-cat-title">
   <div class="main-title-categoria">Categorias</div>
   <div class="wraper-cat">
-    <button class="cat__button active">Categoria1</button>
-    <button class="cat__button">Categoria2</button>
-    <button class="cat__button">Categoria3</button>
-    <button class="cat__button">Categoria4</button>
-    <button class="cat__button">Categoria5</button>
+    <button class="cat__button" *ngFor="let cat of cat_prod" id="{{cat.id_cat}}" (click)="filtrar_cat($event)" >{{ cat.nombre_cat }}</button>
   </div>
 </div>
 
 <div class="wraper-products">
   <div class="products">
-    <a routerLink="/producto" class="products__card">
-      <img src="assets/img/producto1.jpg" alt="" class="products__card-img">
+    <a *ngFor="let prod of data_prod" routerLink="producto/{{prod.id_prod }}" class="products__card" >
+      <img src="{{prod.imgs[0].url_img}}" alt="" class="products__card-img">
+      <!-- <h1>{{ prod.imgs[0].url_img }}</h1> -->
       <div class="products__card-body">
-        <h2 class="products__card-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</h2>
-        <h3 class="products__card-price">RD$ 1,250.00</h3>
+        <h2 class="products__card-name">{{prod.nombre_prod}}</h2>
+        <h3 class="products__card-price">{{prod.precio_prod}}</h3>
         <button class="products__card-btn-add-card">
           <i class="fas fa-shopping-cart"></i>
           <span>Agregar al carrito</span>
@@ -27,7 +24,7 @@
         </button>
       </div>
     </a>
-    <a routerLink="/producto" class="products__card">
+    <!-- <a routerLink="/producto" class="products__card">
       <img src="assets/img/producto2.jpg" alt="" class="products__card-img">
       <div class="products__card-body">
         <h2 class="products__card-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</h2>
@@ -97,6 +94,6 @@
           <i class="far fa-eye"></i>
         </button>
       </div>
-    </a>
+    </a> -->
   </div>
 </div>

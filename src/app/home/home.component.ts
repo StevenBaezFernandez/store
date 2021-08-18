@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as Typed from 'typed.js';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import * as Typed from 'typed.js';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
 
@@ -23,6 +24,10 @@ export class HomeComponent implements OnInit {
     };
 
     const typed = new Typed.default('.typed', options);
+
+    this.api.get(`http://localhost/tropicalisimo_api/api.php?controller=hp`).subscribe(data =>{
+      console.log(data);
+    });
 
   }
 
