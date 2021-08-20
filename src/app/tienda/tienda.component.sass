@@ -43,17 +43,18 @@
     border-radius: 8px
     background: #fff
     position: relative
-    &:hover .products__card-btn-add-card,
-    &:hover .products__card-btn-view
-        visibility: visible
-        opacity: 1
         
 .products__card-img
     width: 75%
     display: block
     margin: auto
+    transition: all ease .2s
+.products__card:hover .products__card-img
+    transform: scale(1.05) translateY(-15px)
 .products__card-body
     padding: 20px
+.products__card:hover .products__card-name
+    color:#d62173
 .products__card-name
     font-family: 'Raleway'
     color: #777
