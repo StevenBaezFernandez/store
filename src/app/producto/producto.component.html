@@ -10,9 +10,9 @@
     </div>
     <div class="wrap-product">
         <div class="product__side-info">
-            <h1 class="product__side-info-name">{{dataProd[0].nombre_prod}}</h1>
-            <h2 class="product__side-info-price">{{dataProd[0].precio_prod}}</h2>
-            <h3 class="product__side-info-desc">{{dataProd[0].descripcion_prod}}</h3>
+            <h1 class="product__side-info-name">{{dataProd[0]?.nombre_prod}}</h1>
+            <h2 class="product__side-info-price">{{dataProd[0]?.precio_prod}}</h2>
+            <h3 class="product__side-info-desc">{{dataProd[0]?.descripcion_prod}}</h3>
             <div class="wrap-product-btns">
                 <button class="product__side-info-btn-add-cart">Agregar al carrito</button>
                 <div class="product__side-info-btn-amount">
@@ -24,9 +24,9 @@
             </div>
         </div>
         <div class="product__side-img">
-            <img src="{{dataProd[0].imgs[0].url_img}}" class="product__side-img__img"  alt="">
+            <img src="{{dataProd[0].imgs[0]?.url_img}}" class="product__side-img__img"  alt="">
             <div class="product__side-img__nav">
-                <img src="{{imgs.url_img}}" *ngFor="let imgs of dataProd[0].imgs" alt="">
+                <img *ngFor="let imgs of dataProd[0]?.imgs" alt="" src="{{imgs.url_img}}">
             </div>
         </div>
     </div>

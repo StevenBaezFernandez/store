@@ -10,7 +10,7 @@ import { Pipe } from '@angular/core';
 })
 export class ProductoComponent implements OnInit {
   idProd:string = '';
-  dataProd:any;
+  dataProd:any[] = [];
 
   constructor(private api: ApiService, private rutaActiva: ActivatedRoute) { }
 

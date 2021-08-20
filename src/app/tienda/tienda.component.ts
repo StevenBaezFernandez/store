@@ -10,8 +10,10 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class TiendaComponent implements OnInit {
   data_prod:any;
   cat_prod:any;
+  cat_prod_filtered:any;
   constructor(private api: ApiService, private rutaActiva: ActivatedRoute) { }
   get_all_data(){
+    this.cat_prod_filtered = 'all';
     this.api.get('http://localhost/tropicalisimo_api/api.php?controller=tienda').subscribe(data =>{
       this.data_prod = data;
     });
@@ -32,13 +34,18 @@ export class TiendaComponent implements OnInit {
     });
   }
 
-  filtrar_cat(e:any){
-    console.log(e.target.id);
-    let categoria = e.target.id;
-    this.api.get(`http://localhost/tropicalisimo_api/api.php?controller=tienda&categoria=${categoria}`).subscribe( data => {
-      this.data_prod = data;
-      
-    });
+  filtrar_cat(e:any = false){
+    if(e){
+      let categoria = e.target.id;
+      console.log(e.target.id);
+      this.cat_prod_filtered = categoria;
+      this.api.get(`http://localhost/tropicalisimo_api/api.php?controller=tienda&categoria=${categoria}`).subscribe( data => {
+        this.data_prod = data;
+      });
+    }else{
+      this.cat_prod_filtered = 'all';
+      this.get_all_data();
+    }  
   }
 
 }
